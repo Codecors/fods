@@ -31,7 +31,7 @@ self.addEventListener("install", function(e) {
   }))
 }), self.addEventListener("fetch", function(e) {
   console.log("[ServiceWorker] Fetch", e.request.url);
-  var t = "https://foodgrm.herokuapp.com/";
+  var t = "https://indorigram.herokuapp.com/";
   0 === e.request.url.indexOf(t) ? e.respondWith(fetch(e.request).then(function(t) {
     return caches.open(dataCacheName).then(function(c) {
       return c.put(e.request.url, t.clone()), console.log("[ServiceWorker] Fetched&Cached Data"), t
